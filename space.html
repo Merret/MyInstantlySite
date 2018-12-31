@@ -69,7 +69,7 @@
     <script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.5.3/js/element.js"></script>
     <script>
         var ss = elm.id("sites");
-        
+        var userSiteList = (xhr.json(localStorage.userInfos)).MISuserSiteList;
         var data = xhr.json(userSiteList);
         for(var i = 0, i < data.sites.length; i++) {
             addSite(i, data.sites[i].name, data.sites[i].LEtime, data.sites[i].Ctime);
