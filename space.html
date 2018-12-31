@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.5.3/js/xhr.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.5.3/js/element.js"></script>
     <style>
         body {
             text-align: center;
@@ -65,8 +67,6 @@
     <div id="sites" style="padding: 4rem 0;">
         
     </div>
-    <script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.5.3/js/xhr.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.5.3/js/element.js"></script>
     <script>
         var ss = elm.id("sites");
         var userSiteList = (xhr.json("https://api.myjson.com/bins/"+localStorage.userInfos)).MISuserSiteList;
