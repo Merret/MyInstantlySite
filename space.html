@@ -70,7 +70,9 @@
     <script>
         var ss = elm.id("sites");
         var userSiteList = (xhr.json("https://api.myjson.com/bins/"+localStorage.UserInfos)).MISuserSiteList;
+	ss.innerHTML = JSON.stringify(userSiteList);
         var data = xhr.json(userSiteList);
+	ss.innerHTML = "";
         for(var i = 0, i < data.sites.length; i++) {
             addSite(i, data.sites[i].name, data.sites[i].LEtime, data.sites[i].Ctime);
         }
