@@ -73,7 +73,7 @@
 	ss.innerHTML = JSON.stringify(userSiteList);
         var data = xhr.json(userSiteList);
 	ss.innerHTML = "";
-        for(var i = 0, i < data.sites.length; i++) {
+        for(var i = 0; i < data.sites.length; i++) {
             addSite(i, data.sites[i].name, data.sites[i].LEtime, data.sites[i].Ctime);
         }
         function addSite(n, name, LEtime, Ctime) {
