@@ -56,11 +56,22 @@
             67% {color: rgba(0,0,255,0.5);}
             100% {color: rgba(255,0,0,0.5);}
         }
+        @keyframes BDcolorChange {
+            0% {border: 1px solid rgba(255,0,0,0.5);}
+            33% {border: 1px solid rgba(0,255,0,0.5);}
+            67% {border: 1px solid rgba(0,0,255,0.5);}
+            100% {border: 1px solid rgba(255,0,0,0.5);}
+        }
 	@media only screen and (max-width: 600px) {
 	    br.mBR {
 		display: block;
 	    }
 	}
+	input[type=text]:focus {
+            animation-name: BDcolorChange;
+            animation-iteration-count: infinite;
+            animation-duration: 15s;
+        }
     </style>
 </head>
 <body>
@@ -68,12 +79,12 @@
         <h1>Create Your Site</h1>
     </div>
     <div id="siteForm" style="padding: 4rem 0; margin: 0 15%; text-align: left">
-        <p>Site Name: <input id="Sname" min-width="320px" max-width="640px" type="text" placeholder="Enter Site Name (1 ~ 64 letters)" maxlength="64" required></p>
+        <p>Site Name: <input id="Sname" min-width="320px" max-width="640px" type="text" style="width:16rem; overflow:hidden; border: 1px solid rgba(0,0,0,0.6);" placeholder="Enter Site Name (1 ~ 64 letters)" maxlength="64" required></p>
         <p>Index File: </p>
         <p style="color: gray">PS: Every website has its "Index File". It is the homepage of a website.</p>
         <textarea id="Sindex" placeholder="The Index File Of Your Site" required class="bgTheme notranslate" style="border: 0; width: 100%; font-size: 1.2rem; box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);" rows="12" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
         <br>
-        <button class="bgTheme" style="border: none; display: inline-block; margin: 1rem 0; padding: 0.6rem 0; font-size: 1.2rem; width: 80%; vertical-align: middle; overflow: hidden; text-decoration: none; white-space: nowrap" onclick="">Create</button>
+        <button class="bgTheme" style="border: none; display: inline-block; margin: 1rem 0; padding: 0.6rem 0; font-size: 1.2rem; width: 10rem; vertical-align: middle; overflow: hidden; text-decoration: none; white-space: nowrap" onclick="">Create</button>
     </div>
     <div class="bgTheme" style="padding: 2rem 0; margin: -2rem; position: relative; left: 0; right: 0; bottom: 0;">
         <h3>Copyright © 2018<a href="https://merret.github.io/MyInstantlySite"> My Instantly Site! </a></h3>
