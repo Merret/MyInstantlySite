@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Your Site - My Instantly Site!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet">
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Noto Sans TC', arial;
+            overflow-x: hidden;
+        }
+        a {
+            color: deepskyblue;
+            text-decoration: none;
+        }
+        a:hover {
+            color: skyblue;
+            text-decoration: none;
+        }
+        a:visited {
+            color: deepskyblue;
+            text-decoration: none;
+        }
+        .bgTheme {
+            animation-name: bgChange;
+            animation-iteration-count: infinite;
+            animation-duration: 30s;
+        }
+        button {
+	    border: none; 
+	    cursor: pointer; 
+            display: inline-block; 
+            margin: 1rem 0px; 
+            padding: 0.6rem 0px; 
+            font-size: 1.2rem; 
+            width: 16rem; 
+            vertical-align: middle; 
+            overflow: hidden; 
+            text-decoration: none; 
+            white-space: nowrap;
+        }
+	br.mBR {
+	    display: none;
+	}
+        @keyframes bgChange {
+            0% {background-color: rgba(255,0,0,0.5);}
+            33% {background-color: rgba(0,255,0,0.5);}
+            67% {background-color: rgba(0,0,255,0.5);}
+            100% {background-color: rgba(255,0,0,0.5);}
+        }
+	@media only screen and (max-width: 600px) {
+	    br.mBR {
+		display: block;
+	    }
+	}
+    </style>
+</head>
+<body>
+    <div class="bgTheme" style="padding: 5rem 0; margin: -2rem;">
+        <h1>Create Your Site</h1>
+    </div>
+    <div id="siteForm" style="padding: 4rem 0;">
+        <p>Site Name: <input id="Sname" type="text" placeholder="Enter Site Name (1 ~ 64 letters)" maxlength="64" required></p>
+        <p>Index File: </p>
+        <p style="color: lightgray">PS: Every website has its "Index File". It is the homepage of a website.</p>
+        <textarea id="Sindex" placeholder="The Index File Of Your Site" required>
+        </textarea>
+        <br>
+        <button class="w3-button" onclick="">Create</button>
+    </div>
+    <div class="bgTheme" style="padding: 2rem 0; margin: -2rem; position: relative; left: 0; right: 0; bottom: 0;">
+        <h3>Copyright © 2018<a href="https://merret.github.io/MyInstantlySite"> My Instantly Site! </a></h3>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.5.3/js/xhr.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Merret/UsefulJS@0.5.3/js/element.js"></script>
+    <script>
+        
+    </script>
+</body>
+</html>
