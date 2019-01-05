@@ -95,6 +95,14 @@
             tempD["site_name"] = elm.id("Sname").value;
             tempD["site_edited_time"] = new Date().toJSON();
             var r = xhr.put("https://api.myjson.com/bins/"+window.location.href.substr(x.length+1), JSON.stringify(tempD));
+            var userSiteList = (xhr.json("https://api.myjson.com/bins/"+localStorage.UserInfos)).MISuserSiteList;
+            var Ldata = xhr.json(userSiteList);
+            for(var i = 0; i < Ldata.sites.length; i++) {
+                if(Ldata.sites[i].name==d["site_name"]) {
+                    Ldata.sites[i].name==tempD["site_name"];
+                }
+            }
+            xhr.put(userSiteList, JSON.stringify(Ldata));
             if(confirm("Change Saved!\nWould you want back to sites list page?")) {
                 location.href = "list";
             }
