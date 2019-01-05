@@ -90,6 +90,11 @@
         var d = xhr.json("https://api.myjson.com/bins/"+window.location.href.substr(x.length+1));
         elm.id("h").innerHTML = d["site_name"];
         elm.id("Sname").value = d["site_name"];
+        function save() {
+            var tempD = d;
+            tempD["site_name"] = elm.id("Sname").value;
+            tempD["site_edited_time"] = new Date().toJSON();
+        }
     </script>
 </body>
 </html>
