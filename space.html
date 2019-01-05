@@ -87,10 +87,10 @@
             stitle.innerHTML = name;
             base.appendChild(stitle);
             var sedTime = document.createElement('p');
-            sedTime.innerHTML = "Lastest edited: " + LEtime;
+            sedTime.innerHTML = "Lastest edited: " + new Date(LEtime).toLocaleString();
             base.appendChild(sedTime);
             var scTime = document.createElement('p');
-            scTime.innerHTML = "Created: " + Ctime;
+            scTime.innerHTML = "Created: " + new Date(Ctime).toLocaleString();
             base.appendChild(scTime);
         }
     </script>
