@@ -53,10 +53,21 @@
             67% {background-color: rgba(0,0,255,0.5);}
             100% {background-color: rgba(255,0,0,0.5);}
         }
+        @keyframes BDcolorChange {
+            0% {border: 1px solid rgba(255,0,0,0.5);}
+            33% {border: 1px solid rgba(0,255,0,0.5);}
+            67% {border: 1px solid rgba(0,0,255,0.5);}
+            100% {border: 1px solid rgba(255,0,0,0.5);}
+        }
         @media only screen and (max-width: 600px) {
             br.mBR {
                 display: block;
             }
+        }
+        input[type=text]:focus {
+            animation-name: BDcolorChange;
+            animation-iteration-count: infinite;
+            animation-duration: 15s;
         }
     </style>
 </head>
@@ -65,7 +76,8 @@
         <h1 id="h"></h1>
     </div>
     <div id="site" style="padding: 4rem 0;">
-        
+        <h2>Site Name: </h2><input id="Sname" min-width="320px" max-width="640px" type="text" style="padding:8px;display:block;border:none;border-bottom:1px solid #ccc;width:16rem" placeholder="Enter Site Name (1 ~ 64 letters)" maxlength="64" required>
+        <h2>Site URL: </h2>
     </div>
     <script>
         var x = location.protocol + '//' + location.host + location.pathname;
@@ -73,6 +85,7 @@
             alert("ERROR 404\nRedirecting to sites list.");
             location.href = "list";
         }
+        
     </script>
 </body>
 </html>
