@@ -94,7 +94,15 @@
     <script>
         
         function createSite() {
-            
+            var ntime = new Date().toJSON();
+            var data = {"file_name": "index", "file_type": "html", "file_created_time": ntime, "file_edited_time": ntime, "data": elm.id("Sindex").value};
+            var b1 = (JSON.parse(xhr.post("https://api.myjson.com/bins", JSON.stringify(data)))).uri.substr(28);
+            var siteData = {"site_name": elm.id("Sname").value, "site_created_time": ntime, "site_edited_time": ntime, "files": [{"name": "index", "type": "html", "data": b1}]};
+            var b2 = (JSON.parse(xhr.post("https://api.myjson.com/bins", JSON.stringify(siteData)))).uri.substr(28);
+            var userSiteList = (xhr.json("https://api.myjson.com/bins/"+localStorage.UserInfos)).MISuserSiteList;
+            var Ldata = xhr.json(userSiteList);
+            Ldata.sites.push({"name": elm.id("Sname").value, "LEtime": ntime, "Ctime": ntime, "data": b2});
+            var final = xhr.put(userSiteList, JSON.stringify(Ldata));
         }
     </script>
 </body>
