@@ -89,7 +89,7 @@
         }
         var d = xhr.json("https://api.myjson.com/bins/"+window.location.href.substr(x.length+1));
         elm.id("h").innerHTML = d["site_name"];
-        elm.id("Sname").innerHTML = d["site_name"];
+        elm.id("Sname").value = d["site_name"];
     </script>
 </body>
 </html>
