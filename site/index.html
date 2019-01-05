@@ -76,7 +76,7 @@
         <h1 id="h"></h1>
     </div>
     <div id="site" style="padding: 4rem 0; margin: 0 4rem; text-align: left">
-        <h2>Site Name: </h2><input id="Sname" min-width="320px" max-width="640px" type="text" style="padding:8px;display:block;border:none;border-bottom:1px solid #ccc;width:16rem" placeholder="Enter Site Name (1 ~ 64 letters)" maxlength="64" required>
+        <h2 id="sn">Site Name: </h2><input id="Sname" min-width="320px" max-width="640px" type="text" style="padding:8px;display:block;border:none;border-bottom:1px solid #ccc;width:16rem" placeholder="Enter Site Name (1 ~ 64 letters)" maxlength="64" required>
         <h2>Site URL: </h2>
     </div>
     <script>
@@ -85,7 +85,9 @@
             alert("ERROR 404\nRedirecting to sites list.");
             location.href = "list";
         }
-        
+        var d = xhr.json("https://api.myjson.com/bins/"+window.location.href.substr(x.length+1));
+        elm.id("h").innerHTML = d["site_name"];
+        elm.id("Sname").innerHTML = d["site_name"];
     </script>
 </body>
 </html>
