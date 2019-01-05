@@ -100,7 +100,7 @@
             var Ldata = xhr.json(userSiteList);
             for(var i = 0; i < Ldata.sites.length; i++) {
                 if(Ldata.sites[i].name==d["site_name"]) {
-                    Ldata.sites[i].name = tempD["site_name"];
+                    Ldata.sites[i].name = elm.id("Sname").value;
                     Ldata.sites[i].LEtime = t;
                 }
             }
