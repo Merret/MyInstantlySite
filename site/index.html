@@ -94,6 +94,10 @@
             var tempD = d;
             tempD["site_name"] = elm.id("Sname").value;
             tempD["site_edited_time"] = new Date().toJSON();
+            var r = xhr.put("https://api.myjson.com/bins/"+window.location.href.substr(x.length+1), JSON.stringify(tempD));
+            if(confirm("Change Saved!\nWould you want back to sites list page?")) {
+                location.href = "list";
+            }
         }
     </script>
 </body>
