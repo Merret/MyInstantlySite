@@ -79,6 +79,18 @@
         for(var i = 0; i < data.sites.length; i++) {
             addSite(i, data.sites[i].name, data.sites[i].LEtime, data.sites[i].Ctime, data.sites[i].data);
         }
+        /* Add Site */
+        var sdiv = document.createElement('div');
+        sdiv.id = "addSite";
+        sdiv.onclick = function() {location.href = "create"};
+        sdiv.className = "clickable w3-panel w3-pale-green w3-leftbar w3-border-green w3-margin";
+        sdiv.style.textAlign = "center";
+        var add = document.createElement('h1');
+        add.innerHTML = "+";
+        add.fontWeight = "700";
+        sdiv.appendChild(stitle);
+        ss.appendChild(sdiv);
+        
         function addSite(n, name, LEtime, Ctime, loc) {
             var sdiv = document.createElement('div');
             sdiv.id = "site" + n;
