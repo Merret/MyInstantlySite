@@ -104,6 +104,8 @@
             var Ldata = xhr.json(userSiteList);
             Ldata.sites.push({"name": elm.id("Sname").value, "LEtime": ntime, "Ctime": ntime, "data": b2});
             var final = xhr.put(userSiteList, JSON.stringify(Ldata));
+            alert("Site Create Successfully!");
+            location.href = "list";
         }
     </script>
 </body>
