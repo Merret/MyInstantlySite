@@ -82,13 +82,13 @@
         /* Add Site */
         var sdiv = document.createElement('div');
         sdiv.id = "addSite";
-        sdiv.onclick = function() {location.href = "create"};
+        sdiv.onclick = function() {location.href = "create";};
         sdiv.className = "clickable w3-panel w3-pale-green w3-leftbar w3-border-green w3-margin";
         sdiv.style.textAlign = "center";
-        var add = document.createElement('h1');
-        add.innerHTML = "+";
-        add.fontWeight = "700";
-        sdiv.appendChild(stitle);
+        var adds = document.createElement('h1');
+        adds.innerHTML = "+";
+        adds.fontWeight = "700";
+        sdiv.appendChild(adds);
         ss.appendChild(sdiv);
         
         function addSite(n, name, LEtime, Ctime, loc) {
