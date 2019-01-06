@@ -92,7 +92,7 @@
         elm.id("Sname").value = d["site_name"];
         function save() {
             var t = new Date().toJSON();
-            var tempD = d;
+            var tempD = JSON.parse(JSON.stringify(d));
             tempD["site_name"] = elm.id("Sname").value;
             tempD["site_edited_time"] = t;
             var r = xhr.put("https://api.myjson.com/bins/"+window.location.href.substr(x.length+1), JSON.stringify(tempD));
@@ -107,6 +107,8 @@
             xhr.put(userSiteList, JSON.stringify(Ldata));
             if(confirm("Change Saved!\nWould you want back to sites list page?")) {
                 location.href = "list";
+            } else {
+                location.reload();
             }
         }
     </script>
