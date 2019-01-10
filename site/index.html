@@ -88,6 +88,10 @@
         <button class="bgTheme" style="border: none; display: inline-block; margin: 1rem 0; padding: 0.6rem 0; font-size: 1.2rem; width: 10rem; vertical-align: middle; overflow: hidden; text-decoration: none; white-space: nowrap" onclick="save()">Save</button>
         <button style="background-color: Crimson; color: white; border: none; display: inline-block; margin: 1rem 0; padding: 0.6rem 0; font-size: 1.2rem; width: 10rem; vertical-align: middle; overflow: hidden; text-decoration: none; white-space: nowrap" onclick="del()">Delete</button>
         <button style="border: 1px solid black; display: inline-block; margin: 1rem 0; padding: 0.6rem 0; font-size: 1.2rem; width: 10rem; vertical-align: middle; overflow: hidden; text-decoration: none; white-space: nowrap" onclick="location.href='list';">Back</button>
+        <h2>Files: </h2>
+        <div id="files">
+            
+        </div>
     </div>
     <script>
         var x = location.protocol + '//' + location.host + location.pathname;
@@ -136,6 +140,23 @@
             xhr.put(userSiteList, JSON.stringify(Ldata));
             alert("This site has been deleted successfully.\nDirecting you to sites list page...");
             location.href = "list";
+        }
+        for(var i = 0; i < d.files.length; i++) {
+            
+        }
+        function addFile(name, type, data) {
+            var sdiv = document.createElement('div');
+            sdiv.id = "f-" + name;
+            sdiv.onclick = function() {readFile(data);};
+            sdiv.className = "clickable w3-panel w3-pale-blue w3-leftbar w3-border-blue w3-margin";
+            sdiv.style.textAlign = "left";
+            elm.id("files").appendChild(sdiv);
+            var fname = document.createElement('h3');
+            fname.innerHTML = name;
+            elm.id("f-"+name).appendChild(fname);
+            var ftype = document.createElement('p');
+            ftype.innerHTML = "File Type: " + type;
+            elm.id("f-"+name).appendChild(ftype);
         }
     </script>
 </body>
