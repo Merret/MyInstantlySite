@@ -148,7 +148,15 @@
             var sdiv = document.createElement('div');
             sdiv.id = "f-" + name;
             sdiv.onclick = function() {readFile(data);};
-            sdiv.className = "clickable w3-panel w3-pale-blue w3-leftbar w3-border-blue w3-margin";
+            var color = "light-grey";
+            if(type == "html") {
+                color = "orange";
+            } else if(type == "js") {
+                color = "yellow";
+            } else if(type == "css") {
+                color = "blue";
+            }
+            sdiv.className = "clickable w3-panel w3-leftbar w3-margin w3-border-"+ color + " w3-pale-" + color;
             sdiv.style.textAlign = "left";
             elm.id("files").appendChild(sdiv);
             var fname = document.createElement('h3');
