@@ -142,7 +142,7 @@
             location.href = "list";
         }
         for(var i = 0; i < d.files.length; i++) {
-            
+            addFile(d.files[i].name, d.files[i].type, d.files[i].data);
         }
         function addFile(name, type, data) {
             var sdiv = document.createElement('div');
